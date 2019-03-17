@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body class="w3-light-grey">
+
+<!-- Navigation bar with social media icons -->
+<style>
+#logi{
+  padding-top: 110px;
+  padding-right: 50px;
+  padding-bottom: 200px;
+  padding-left: 50px;
+}
+
+#regist{
+  padding-top: 20px;
+  padding-right: 100px;
+  padding-bottom: 50px;
+  padding-left: 100px;
+}
+
+#title_head{
+  background-image: url("https://media.istockphoto.com/photos/stethoscope-on-blue-background-picture-id866772230?k=6&m=866772230&s=612x612&w=0&h=aP5p7YqPllPPSDQYNubuiNvwiGj5_6DNtutVpdzOLd8=");
+  background-color: #cccccc;
+  height: 200px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+</style>
+<!-- w3-content defines a container for fixed size centered content,
+and is wrapped around the whole page content, except for the footer in this example -->
+
+  <header id="title_head" class="w3-container w3-center w3-padding-48 w3-white">
+    <h1 class="w3-jumbo"><b>PATIENTS LIKE ME</b></h1>
+    <h6>Cure and Inspire...<span class="w3-tag">TOGETHER</span></h6>
+  </header>
+<div class="w3-content w3-middle" style="max-width:1600px float:middle">
+
+      <div class="w3-white w3-margin" style="float:left" >
+        <div class="w3-container w3-padding w3-black" style="float:middle">
+          <h4>LOGIN PORTAL</h4>
+        </div>
+		<div class="w3-justify" id="logi"
+			  <p>If you're already a Member, <strong> Sign in HERE!! </strong></p>
+			  <p>Name</p>
+			  <input type="text" name="username" id="username" />
+			  <p>Password</p>
+			  <input type="password" name="pass" id="pass"/>  
+			  <p>Cick here to login</p>
+			  <input type="submit" id="login_id" />
+		</div>
+      </div>
+	  
+	  <div class="w3-white w3-margin" style="float:left">
+        <div class="w3-container w3-padding w3-black">
+          <h4>REGISTER HERE!</h4>
+        </div>
+		<div class="w3-justify" id="regist">
+			<p>Not a Member? <strong> Sign up HERE!! </strong></p>
+			  <p>Username</p>
+			  <input type="text" name="username" />
+			  <p>Email Address</p>
+			  <input type="text" name="email" />
+			  <p>Ph.no</p>
+			  <input type="text" name="phno" />
+			  <p>set a password</p>
+			  <input type="password" name="pass1" />
+			  <p>retype the password</p>
+			  <input type="password" name="pass2" /> 
+			  <p>Click here to register</p>
+			  <input type="submit" id="register_id"/>
+		</div>
+      </div>
+
+<!-- END w3-content -->
+</div>
+
+</body>
+        <script type="text/javascript">
+		var submit=document.getElementById('login_id');
+
+				submit.onclick=function()
+				{
+					var nameInput=document.getElementById('username');
+					var passInput=document.getElementById('pass');
+
+					var name=nameInput.value;
+					var pass=passInput.value;
+					//create the reqest object
+					var request=new XMLHttpRequest();
+					//capture the request and stare it in the variable
+					request.onreadystatechange=function()
+					{
+						if(request.readyState===XMLHttpRequest.DONE)
+						{
+							//take some action
+							if(request.status===200)
+							{
+				    /*            var names=request.responseText;
+								names=JSON.parse(names);
+								var list='';
+								for(var i=0;i<names.length;i++)
+								{
+								list+='<li>'+names[i]+'</li>';
+								}
+								var ul=document.getElementById('namelist');
+								ul.innerHTML=list;  
+					*/		}
+						}
+					};
+
+					//make the request
+					request.open('POST', '/login?name='+name+'&pass='+pass, true);
+					request.send();
+				};
+					
+        </script>
+</html>
