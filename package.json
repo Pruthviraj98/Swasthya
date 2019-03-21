@@ -1,0 +1,24 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "connect-form": "^0.2.1",
+    "consolidate": "^0.15.1",
+    "cookie-parser": "^1.4.4",
+    "date-utils": "^1.2.21",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "moment": "^2.24.0",
+    "mustache": "^3.0.1",
+    "mysql": "^2.16.0"
+  }
+}
