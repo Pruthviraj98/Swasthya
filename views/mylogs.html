@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body class="w3-light-grey">
+
+<!-- Navigation bar with social media icons -->
+<style>
+#logi{
+  padding-top: 70px;
+  padding-right: 50px;
+  padding-bottom: 150px;
+  padding-left: 50px;
+}
+
+#regist{
+  padding-top: 20px;
+  padding-right: 100px;
+  padding-bottom: 50px;
+  padding-left: 100px;
+}
+
+#title_head{
+  background-image: url("https://media.istockphoto.com/photos/stethoscope-on-blue-background-picture-id866772230?k=6&m=866772230&s=612x612&w=0&h=aP5p7YqPllPPSDQYNubuiNvwiGj5_6DNtutVpdzOLd8=");
+  background-color: #cccccc;
+  height: 200px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.tg {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:20px 17px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:20px 17px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg .tg-tlfu{font-weight:bold;font-size:26px;font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif !important;;background-color:#68cbd0;border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-ke5j{font-size:26px;font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif !important;;background-color:#00d2cb;border-color:inherit;text-align:center;vertical-align:top}
+</style>
+<!-- w3-content defines a container for fixed size centered content,
+and is wrapped around the whole page content, except for the footer in this example -->
+<div class="w3-bar w3-black w3-hide-small">
+  <strong>WELCOME {{name}}</strong>
+  <div class="header-info">
+  <div class="header-right">
+    <form action="/login" method="GET">
+      <input type="submit" id="login_id" value="BACK TO HOME"/>
+    </form>
+  </div>
+
+  <div class="header-right">
+    <form action="/logout" method="POST">
+    <input type="submit" id="login_id" value="LOGOUT" />
+    </form>
+  </div>
+  </div>
+</div>
+  <header id="title_head" class="w3-container w3-center w3-padding-48 w3-white">
+    <h1 class="w3-jumbo"><b>PATIENTS LIKE ME</b></h1>
+    <h6>Cure and Inspire...<span class="w3-tag">TOGETHER</span></h6>
+  </header>
+<div class="w3-content w3-middle" style="max-width:1600px float:middle">
+
+    <div class="w3-white w3-margin" style="float:left" >
+      <table class="tg">
+  <tr>
+    <th class="tg-tlfu">Name</th>
+    <th class="tg-tlfu">{{name}}</th>
+  </tr>
+  <tr>
+    <td class="tg-tlfu">My Condition</td>
+    <td class="tg-tlfu">{{diseases}}</td>
+  </tr>
+  <tr>
+    <td class="tg-tlfu">My Symptoms</td>
+    <td class="tg-tlfu">{{symptoms}}</td>
+  </tr>
+  <tr>
+    <td class="tg-tlfu">Date of Cure</td>
+    <td class="tg-tlfu">{{date_cure}}</td>
+  </tr>
+  <tr>
+    <td class="tg-tlfu">Hospitals Visited</td>
+    <td class="tg-tlfu">{{hospitals}}</td>
+  </tr>
+  <tr>
+    <td class="tg-tlfu">My Phone Number</td>
+    <td class="tg-tlfu">{{phno}}</td>
+  </tr>
+  <tr>
+    <td class="tg-ke5j" colspan="2">Steps taken till {{date_log}}</td>
+  </tr>
+  <tr>
+    <td class="tg-tlfu" colspan="2">
+      {{steps}}
+    </td>
+  </tr>
+</table>
+    </div>
+
+	  <div class="w3-white w3-margin" style="float:left">
+UPDATE HERE
+    </div>
+
+<!-- END w3-content -->
+</div>
+
+</body>
+</html>

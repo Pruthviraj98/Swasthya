@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body class="w3-light-grey">
+
+<!-- Navigation bar with social media icons -->
+<style>
+#logi{
+  padding-top: 70px;
+  padding-right: 50px;
+  padding-bottom: 150px;
+  padding-left: 50px;
+}
+
+#regist{
+  padding-top: 20px;
+  padding-right: 100px;
+  padding-bottom: 50px;
+  padding-left: 100px;
+}
+
+#title_head{
+  background-image: url("https://media.istockphoto.com/photos/stethoscope-on-blue-background-picture-id866772230?k=6&m=866772230&s=612x612&w=0&h=aP5p7YqPllPPSDQYNubuiNvwiGj5_6DNtutVpdzOLd8=");
+  background-color: #cccccc;
+  height: 200px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:20px 17px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:20px 17px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg .tg-tlfu{font-weight:bold;font-size:26px;font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif !important;;background-color:#68cbd0;border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-ke5j{font-size:26px;font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif !important;;background-color:#00d2cb;border-color:inherit;text-align:center;vertical-align:top}
+
+</style>
+<!-- w3-content defines a container for fixed size centered content,
+and is wrapped around the whole page content, except for the footer in this example -->
+
+  <header id="title_head" class="w3-container w3-center w3-padding-48 w3-white">
+    <h1 class="w3-jumbo"><b>PATIENTS LIKE ME</b></h1>
+    <h6>Cure and Inspire...<span class="w3-tag">TOGETHER</span></h6>
+  </header><br><br><br>
+<div class="w3-content w3-middle" style="max-width:1600px; padding-left:350px">
+
+  <form action="/new_log" method="POST">
+      <table class="tg">
+  <tr>
+    <th class="tg-tlfu">Name</th>
+    <th class="tg-tlfu"><input name="name" id="id" placeholder="Insert name"/></th>
+  </tr>
+  <tr>
+    <td class="tg-tlfu">My Condition</td>
+    <th class="tg-tlfu"><input name="diseases" id="diseases" placeholder="Insert your condition"/></th>
+  </tr>
+  <tr>
+    <td class="tg-tlfu">My Symptoms</td>
+    <th class="tg-tlfu"><input name="symptoms" id="symptoms" placeholder="State your symptoms"/></th>
+  </tr>
+  <tr>
+    <td class="tg-tlfu">Date of Cure</td>
+    <th class="tg-tlfu"><input name="date_cure" id="date_cure" placeholder="If cured, enter approx date else enter 'not cured yet'"/></th>
+  </tr>
+  <tr>
+    <td class="tg-tlfu">Hospitals Visited</td>
+  <th class="tg-tlfu"><input name="hospitals" id="hospitals" placeholder="State the hospitals you've visited"></insert></th>
+  </tr>
+  <tr>
+    <td class="tg-tlfu">My Phone Number</td>
+    <th class="tg-tlfu"><input name="phno" id="phno" placeholder="Insert your phone number"/></th>
+  </tr>
+</tr>
+  <tr>
+    <td class="tg-ke5j" colspan="2">Enter the steps you took</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky" colspan="2">
+      <textarea rows="6" cols="90" name="steps">
+      </textarea>
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-0pky" colspan="2">
+      <center>
+        <input type="submit" name="submit" id="submit" align="center"/>
+      </center>
+    </td>
+  </tr>
+</table>
+<br><br>
+</form>
+    </div>
+
+
+<!-- END w3-content -->
+
+
+</body>
+</html>
