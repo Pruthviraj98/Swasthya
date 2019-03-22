@@ -67,21 +67,34 @@ app.post('/reg', function(request, response) {
 				request.session.loggedin = true;
 				request.session.username = username;
 
+                app.engine('html', engines.mustache);
+                app.set('./', 'html');
 			if (request.session.loggedin) {
-					response.redirect('login');
+					response.redirect('login_reg');
 			}
-				response.end();
 		});
 	} else {
 		response.send('Please enter Username and Password!');
-		response.end();
 	}
 });
 
 app.get('/login', function(request, response) {
 //  connection.query('Select * from diseases where ')
+if(request.session.loggedin==true){
 	response.render("home.html", {name:request.session.username});
+}else{
+  response.send("ERROR 404 login first");
+}
 });
+
+
+app.get('/login_reg', function(request, response) {
+//  connection.query('Select * from diseases where ')
+if(request.session.loggedin==true){
+	response.render("home.html", {name:request.session.username});
+}
+});
+
 
 app.post('/new_log', function(request, response){
   var name=request.session.username;
@@ -131,7 +144,7 @@ app.post('/logout', function(request, response){
 app.get('/mylog', function(request, response){
   var name=request.session.username;
   console.log(name);
-  connection.query("select * from diseases where name= ?",[name], function(err, results, fields){
+  connection.query("SELECT * from diseases where name= ?",[name], function(err, results, fields){
     console.log(results);
   request.session.diseases=results[0].disease;
   request.session.symptoms=results[0].symptoms;
