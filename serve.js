@@ -105,18 +105,28 @@ app.post('/new_log', function(request, response){
   var steps_taken=request.body.steps;
   var symptoms=request.body.symptoms;
   var phno=request.body.phno;
+
+  request.session.diseases=diseases;
+  request.session.symptoms=symptoms;
+  request.session.date_of_log=date_log;
+  request.session.date_of_cure=date_cure;
+  request.session.hospitals=hospitals;
+  request.session.steps=steps_taken;
+  request.session.phno=phno;
+
+
 //'INSERT into users (name, pass, email, phno) values (?, ?, ?, ?)', [username, password, email, phno]
   connection.query('INSERT into diseases (name, disease, symptoms, date_of_log, date_of_cure, hospital_visited, phno, steps_taken) values (?, ?, ?, ?, ?, ?, ?, ?)', [name, diseases, symptoms, date_log, date_cure, hospitals, phno, steps_taken], function(err, result, fields){
     console.log(result);
     response.render("mylogs.html", {
-      name:name,
-      symptoms:symptoms,
-      date_log:date_log,
-      date_cure:date_cure,
-      hospitals:hospitals,
-      steps:steps_taken,
-      phno:phno,
-      diseases:diseases
+      name:request.session.username,
+      symptoms:request.session.symptoms,
+      date_log:request.session.date_of_log,
+      date_cure:request.session.date_of_cure,
+      hospitals:request.session.hospitals,
+      steps:request.session.steps,
+      phno:request.session.phno,
+      diseases:request.session.diseases
     });
 });
 });
@@ -166,6 +176,24 @@ app.get('/mylog', function(request, response){
   });
   });
 });
+
+
+
+
+app.post('/getSearchResults', function(request, response){
+  var queryy=request.body.quer;
+  console.log(request.body.quer)
+  connection.query("SELECT * FROM diseases WHERE symptoms LIKE '%"+queryy+"%'", function(err, results, fields){
+              if (!err) {
+                    console.log(results);
+                  	response.json(results);
+          		} else {
+          			console.log('Results not found.');
+          		}
+            });
+  connection.end();
+});
+
 
 // app.get('show_logs', function(request, response){
 //   response.render("mylogs.html", {
