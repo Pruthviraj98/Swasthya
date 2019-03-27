@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<title>Search Results</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body class="w3-light-grey">
+
+<!-- Navigation bar with social media icons -->
+<style>
+#logi{
+  padding-top: 70px;
+  padding-right: 50px;
+  padding-bottom: 150px;
+  padding-left: 50px;
+}
+
+#regist{
+  padding-top: 20px;
+  padding-right: 100px;
+  padding-bottom: 50px;
+  padding-left: 100px;
+}
+
+#title_head{
+  background-image: url("https://media.istockphoto.com/photos/stethoscope-on-blue-background-picture-id866772230?k=6&m=866772230&s=612x612&w=0&h=aP5p7YqPllPPSDQYNubuiNvwiGj5_6DNtutVpdzOLd8=");
+  background-color: #cccccc;
+  height: 200px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.tg {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:20px 17px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:20px 17px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg .tg-tlfu{font-weight:bold;font-size:26px;font-family:"Oswald";background-color:white;border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-ke5j{font-size:26px;font-family:"Oswald";background-color:white;border-color:inherit;text-align:center;vertical-align:top}
+
+#logout{
+  float: right;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: red;
+  font-family: "Oswald";
+}
+
+#mylogs{
+  float: right;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: black;
+  font-family: "Oswald"
+}
+#myname{
+  float: left;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 28px;
+  line-height: 25px;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: black;
+  font-family: "Oswald"
+}
+</style>
+<!-- w3-content defines a container for fixed size centered content,
+and is wrapped around the whole page content, except for the footer in this example -->
+<div class="w3-bar w3-black w3-hide-small">
+
+  <div class="header-info">
+    <p id="myname">Top 5 Cases that matched your case: </p>
+    <div class="header-right">
+      <form action="/logout" method="POST">
+      <input type="submit" id="logout" value="LOGOUT" />
+      </form>
+    </div>
+  <div class="header-right">
+    <form action="/login" method="GET">
+      <input type="submit" id="mylogs" value="BACK TO HOME"/>
+    </form>
+  </div>
+
+
+  </div>
+</div>
+  <header id="title_head" class="w3-container w3-center w3-padding-20 w3-white">
+    <h1 class="w3-jumbo"><b>SWASTHYA</b></h1>
+    <h6>Cure and Inspire...<span class="w3-tag">TOGETHER</span></h6>
+  </header>
+<center>
+    <div class="w3-white w3-margin w3-centered" >
+      <table class="tg">
+  <tr>
+    <th class="tg-tlfu">Name</th>
+    <th class="tg-tlfu">Condition</th>
+    <th class="tg-tlfu">Symptoms</th>
+    <th class="tg-tlfu">Approx cure date</th>
+  </tr>
+  <tr>
+    <td class="tg-tlfu">{{name1}}</td>
+    <td class="tg-tlfu">{{diseases1}}</td>
+    <td class="tg-tlfu">{{symptoms1}}</td>
+    <td class="tg-tlfu">{{date_cure1}}</td>
+    <td><p class="w3-right"><button class="w3-button w3-black" onclick="myFunction('demo1')"><b>Details</b> <span class="w3-tag w3-white"></span></button></p></td>
+  </tr>
+<tr>
+
+<td colspan="5">
+  <div id="demo1" style="display:none">
+  <br>
+    <h3><strong>Condition</strong></h3>
+    <h4>{{diseases1}}</h4>
+    <h3><strong>Last updated</strong></h3>
+    <h4>{{date_log1}}</h4>
+    <h3><strong>Hospitals Visited</strong></h3>
+    <h4>{{hospitals1}}</h4>
+    <h3><strong>Steps taken till now</strong></h3>
+    <h4>{{steps1}}</h4>
+    <h3><strong>Contact number</strong></h3>
+    <h4>{{phno1}}</h4>
+  </div>
+</td>
+
+</tr>
+  <tr>
+    <td class="tg-tlfu">{{name2}}</td>
+    <td class="tg-tlfu">{{diseases2}}</td>
+    <td class="tg-tlfu">{{symptoms2}}</td>
+    <td class="tg-tlfu">{{date_cure2}}</td>
+    <td><p class="w3-right"><button class="w3-button w3-black" onclick="myFunction('demo2')"><b>Details</b> <span class="w3-tag w3-white"></span></button></p></td>
+  </tr>
+
+  <td colspan="5">
+    <div id="demo2" style="display:none">
+    <br>
+      <h3><strong>Condition</strong></h3>
+      <h4>{{diseases2}}</h4>
+      <h3><strong>Last updated</strong></h3>
+      <h4>{{date_log2}}</h4>
+      <h3><strong>Hospitals Visited</strong></h3>
+      <h4>{{hospitals2}}</h4>
+      <h3><strong>Steps taken till now</strong></h3>
+      <h4>{{steps2}}</h4>
+      <h3><strong>Contact number</strong></h3>
+      <h4>{{phno2}}</h4>
+    </div>
+  </td>
+
+
+  <tr>
+    <td class="tg-tlfu">{{name3}}</td>
+    <td class="tg-tlfu">{{diseases3}}</td>
+    <td class="tg-tlfu">{{symptoms3}}</td>
+    <td class="tg-tlfu">{{date_cure3}}</td>
+    <td><p class="w3-right"><button class="w3-button w3-black" onclick="myFunction('demo3')"><b>Details </b> <span class="w3-tag w3-white"></span></button></p></td>
+  </tr>
+
+  <td colspan="5">
+    <div id="demo3" style="display:none">
+    <br>
+      <h3><strong>Condition</strong></h3>
+      <h4>{{diseases3}}</h4>
+      <h3><strong>Last updated</strong></h3>
+      <h4>{{date_log3}}</h4>
+      <h3><strong>Hospitals Visited</strong></h3>
+      <h4>{{hospitals3}}</h4>
+      <h3><strong>Steps taken till now</strong></h3>
+      <h4>{{steps3}}</h4>
+      <h3><strong>Contact number</strong></h3>
+      <h4>{{phno3}}</h4>
+    </div>
+  </td>
+
+
+  <tr>
+    <td class="tg-tlfu">{{name4}}</td>
+    <td class="tg-tlfu">{{diseases4}}</td>
+    <td class="tg-tlfu">{{symptoms4}}</td>
+    <td class="tg-tlfu">{{date_cure4}}</td>
+
+    <td><p class="w3-right"><button class="w3-button w3-black" onclick="myFunction('demo4')"><b>Details </b> <span class="w3-tag w3-white"></span></button></p></td>
+  </tr>
+
+  <td colspan="5">
+    <div id="demo4" style="display:none">
+    <br>
+      <h3><strong>Condition</strong></h3>
+      <h4>{{diseases4}}</h4>
+      <h3><strong>Last updated</strong></h3>
+      <h4>{{date_log4}}</h4>
+      <h3><strong>Hospitals Visited</strong></h3>
+      <h4>{{hospitals4}}</h4>
+      <h3><strong>Steps taken till now</strong></h3>
+      <h4>{{steps4}}</h4>
+      <h3><strong>Contact number</strong></h3>
+      <h4>{{phno4}}</h4>
+    </div>
+  </td>
+
+  <tr>
+    <td class="tg-tlfu">{{name5}}</td>
+    <td class="tg-tlfu">{{diseases5}}</td>
+    <td class="tg-tlfu">{{symptoms5}}</td>
+    <td class="tg-tlfu">{{date_cure5}}</td>
+    <td><p class="w3-right"><button class="w3-button w3-black" onclick="myFunction('demo5')"><b>Details </b> <span class="w3-tag w3-white"></span></button></p></td>
+  </tr>
+
+  <td colspan="5">
+    <div id="demo5" style="display:none">
+    <br>
+      <h3><strong>Condition</strong></h3>
+      <h4>{{diseases5}}</h4>
+      <h3><strong>Last updated</strong></h3>
+      <h4>{{date_log5}}</h4>
+      <h3><strong>Hospitals Visited</strong></h3>
+      <h4>{{hospitals5}}</h4>
+      <h3><strong>Steps taken till now</strong></h3>
+      <h4>{{steps5}}</h4>
+      <h3><strong>Contact number</strong></h3>
+      <h4>{{phno5}}</h4>
+    </div>
+  </td>
+</table>
+</center>
+    </div>
+<br><br>
+
+<!-- END w3-content -->
+</body>
+<script>
+// Toggle between hiding and showing blog replies/comments
+document.getElementById("myBtn").click();
+function myFunction(id) {
+  var x = document.getElementById(id);
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+</html>
