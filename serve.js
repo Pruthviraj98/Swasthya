@@ -15,7 +15,6 @@ var app = express();
 app.locals.moment = require('moment');
 
 
-
 app.use(session({
 	secret: 'secret',
 	resave: true,
@@ -95,6 +94,26 @@ if(request.session.loggedin==true){
 }
 });
 
+app.post('/donate', function(request, response){
+  response.render('donatePage.html');
+});
+
+app.post('/donateItems', function(request, response){
+  var itemType=request.body.itemType;
+  var itemName=request.body.itemName;
+  var isExpiry=request.body.itemExp;
+  var name=request.session.username;
+  var address=request.body.address;
+  var situation=request.body.situation;
+
+  connection.query('Insert into donation (itemType, itemName, isExpiry, name, address, situation) values(?,?,?,?,?,?)',[itemType, itemName, isExpiry, name, address, situation], function(err, results, fields){
+          if(!err){
+          response.render('Sucesspage.html', {itype: itemType});
+        }else{
+          console.log(err)
+        }
+  });
+});
 
 app.post('/new_log', function(request, response){
   var name=request.session.username;
