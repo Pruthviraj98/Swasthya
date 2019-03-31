@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
-<title>W3.CSS Template</title>
+<head>
+<link rel="icon"
+      type="image/png"
+      href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZBDibVBL5r6nmapCoaOzIe-LO4nCpA2OrlQyeERPcJWbvHFiK">
+</head>
+<title>SWASTHYA</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -130,53 +135,77 @@ form.example::after {
 .header-right {
   float: right;
 }
-.header_info{
+
+#logout{
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
   overflow: hidden;
-  background-color: #f1f1f1;
-  padding: 20px 10px;
+  background-color: red;
+  font-family: "Oswald";
 }
-.header-info.logout{
+
+#mylogs{
   float: left;
-  color: red;
+  color: white;
   text-align: center;
   padding: 12px;
   text-decoration: none;
   font-size: 18px;
   line-height: 25px;
   border-radius: 4px;
+  overflow: hidden;
+  background-color: black;
+  font-family: "Oswald"
 }
-.header-info.mylogs{
+#myname{
   float: left;
-  color: black;
+  color: white;
   text-align: center;
-  padding: 12px;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 25px;
   border-radius: 4px;
+  overflow: hidden;
+  background-color: black;
+  font-family: "Oswald"
 }
 </style>
 <body class="w3-light-grey">
 
 <!-- Navigation bar with social media icons -->
 <div class="w3-bar w3-black w3-hide-small">
-  <strong>WELCOME {{name}}</strong>
   <div class="header-info">
+
+    <p id="myname">Welcome {{name}}, thank you for joining hands in helping...</p>
+    <div class="header-right">
+      <form action="/logout" method="POST">
+      <input type="submit" id="logout" name="logout" value="LOGOUT" />
+      </form>
+    </div>
+    <div class="header-right">
+      <form action="/route_create" method="POST">
+        <input type="submit" id="mylogs" name="mylogs" value="CREATE NEW LOG"/>
+      </form>
+    </div>
+    <div class="header-right">
+      <form action="/donate" method="POST">
+        <input type="submit" id="mylogs" name="mylogs" value="DONATE"/>
+      </form>
+    </div>
   <div class="header-right">
     <form action="/mylog" method="GET">
-      <input type="submit" id="login_id" value="MYLOGS"/>
+      <input type="submit" id="mylogs" name="mylogs" value="MYLOGS"/>
     </form>
   </div>
-  <div class="header-right">
-    <form action="/route_create" method="POST">
-      <input type="submit" id="login_id" value="CREATE NEW LOG"/>
-    </form>
-  </div>
-  <div class="header-right">
-    <form action="/logout" method="POST">
-    <input type="submit" id="login_id" value="LOGOUT" />
-    </form>
-  </div>
+
+
+
   </div>
 </div>
 <!-- w3-content defines a container for fixed size centered content,
@@ -185,7 +214,7 @@ and is wrapped around the whole page content, except for the footer in this exam
 
   <!-- Header -->
   <header id="title_head" class="w3-container w3-center w3-padding-48 w3-white">
-    <h1 class="w3-jumbo"><b>PATIENTS LIKE ME</b></h1>
+    <h1 class="w3-jumbo"><b>SWASTHYA</b></h1>
     <h6>Cure and Inspire...<span class="w3-tag">TOGETHER</span></h6>
   </header>
 
@@ -196,8 +225,8 @@ and is wrapped around the whole page content, except for the footer in this exam
 		  <br><hr>
 		  <br>
 		  <h6 class='topnav'>
-			<form class="example w3-center" action="/action_page.php">
-				<input type="text" placeholder="Type your query here.." name="search">
+			<form class="example w3-center" action="/getSearchResults" method='POST'                                                                                                                                                                                                                                                          >
+				<input type="text" placeholder="Type your query here.." name="quer" id='quer'>
 				<button type="submit"><i class="fa fa-search"></i></button>
 			</form>
 		  </h6>

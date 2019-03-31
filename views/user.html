@@ -1,11 +1,20 @@
 <!DOCTYPE html>
+
 <html>
 <head>
 <link rel="icon"
       type="image/png"
       href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZBDibVBL5r6nmapCoaOzIe-LO4nCpA2OrlQyeERPcJWbvHFiK">
 </head>
-<title>Search Results</title>
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="icon"
+      type="image/png"
+      href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZBDibVBL5r6nmapCoaOzIe-LO4nCpA2OrlQyeERPcJWbvHFiK">
+</head>
+<title>My LOGS</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -85,80 +94,60 @@
   background-color: black;
   font-family: "Oswald"
 }
+
+#adminContact{
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 5px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: white;
+  font-family: "Oswald";
+}
 </style>
-<!-- w3-content defines a container for fixed size centered content,
-and is wrapped around the whole page content, except for the footer in this example -->
-<div class="w3-bar w3-black w3-hide-small">
+<body class="w3-light-grey">
 
-  <div class="header-info">
-    <p id="myname">DONATE: </p>
-    <div class="header-right">
-      <form action="/logout" method="POST">
-      <input type="submit" id="logout" value="LOGOUT" />
-      </form>
+  <header>
+  <div class="w3-bar w3-black w3-hide-small">
+    <div class="header-right" style="float:left">
+      <button class="w3-button"><h5><a href="../">Return to front page.</a></h5></button>
     </div>
-  <div class="header-right">
-    <form action="/login" method="GET">
-      <input type="submit" id="mylogs" value="BACK TO HOME"/>
-    </form>
   </div>
+</header>
 
-  </div>
-</div>
-  <header id="title_head" class="w3-container w3-center w3-padding-20 w3-white">
-    <h1 class="w3-jumbo"><b>SWASTHYA</b></h1>
-    <h6>Cure and Inspire...<span class="w3-tag">TOGETHER</span></h6>
-  </header>
-<center>
-    <div class="w3-content" style="max-width:1600px">
+        <hr>
 
-      <form action="/donateItems" method="POST">
-          <table class="tg">
-      <tr>
-        <th class="tg-tlfu">Name</th>
-        <th class="tg-tlfu"><input name="name" id="name" placeholder="Insert name"/></th>
-      </tr>
-      <tr>
-        <td class="tg-tlfu">Select Donation Type</td>
-        <th class="tg-tlfu">
-          <select name="itemType">
-            <option value="Medicene">Medicene</option>
-            <option value="Sanitory">Sanitories</option>
-            <option value="Clothes">Clothes</option>
-          </select>
-        </th>
-      </tr>
-      <tr>
-        <td class="tg-tlfu">Expiry Date</td>
-        <th class="tg-tlfu"><input name="itemExp" id="itemExp" placeholder="Mention the Expiry date of the Item"/></th>
-      </tr>
-      <tr>
-        <td class="tg-tlfu">Item Name</td>
-        <th class="tg-tlfu"><input name="itemName" id="itemName" placeholder="What would you call this item as?"/></th>
-      </tr>
-      <tr>
-        <td class="tg-tlfu">Address</td>
-      <th class="tg-tlfu"><input name="address" id="address" placeholder="Address of the user"></input></th>
-      </tr>
-      <tr>
-        <td class="tg-tlfu">Why did you buy this?</td>
-        <td class="tg-0pky">
-          <textarea rows="6" cols="90" name="situation">
-          </textarea>
-        </td>
-      </tr>
+        <div class="w3-justify" >
+              <div class=" w3-center w3-container w3-padding w3-black" style="float:middle">
+                <h1 id="username"></h1>
+                <h3 id="email">mail id-<span class="w3-tag w3-white"></span></h3>
+              </div>
+              <div id="content" class=" w3-content w3-justify" style="max-width:900px">
+                <p id="body"></p>
+              </div>
+              <hr>
+        </div>
+<br><br><br><br><br>
+        <footer>
+        <div class="w3-bar w3-black w3-hide-small">
+          <div class="header-right" style="float:right; padding-right:550px">
+            <form action="/contact" method="POST">
+            <input type="submit" id="adminContact" name="contactAdmin" value="Contact us" />
+            </form>
+          </div>
+          <div class="header-right" style="float:right; padding-right:10px">
+            <form action="/more" method="POST">
+            <input type="submit" id="adminContact" name="moreAbout" value="More About us" />
+            </form>
+          </div>
+        </div>
+        </footer>
+    </body>
 
-      <tr>
-        <td class="tg-0pky" colspan="2">
-          <center>
-            <input type="submit" name="submit" id="submit" value="DONATE :)" align="center"/>
-          </center>
-        </td>
-      </tr>
-    </table>
-    <br><br>
-    </form>
-  </div>
-</center>
-</body>
+
+
 </html>

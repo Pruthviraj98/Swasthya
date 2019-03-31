@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
-<title>W3.CSS Template</title>
+<head>
+<link rel="icon"
+      type="image/png"
+      href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZBDibVBL5r6nmapCoaOzIe-LO4nCpA2OrlQyeERPcJWbvHFiK">
+</head>
+<title>Create LOGS</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -37,16 +42,73 @@
 .tg  {border-collapse:collapse;border-spacing:0;}
 .tg td{font-family:Arial, sans-serif;font-size:14px;padding:20px 17px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
 .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:20px 17px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
-.tg .tg-tlfu{font-weight:bold;font-size:26px;font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif !important;;background-color:#68cbd0;border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-tlfu{font-weight:bold;font-size:26px;font-family:"Oswald";background-color:#68cbd0;border-color:inherit;text-align:center;vertical-align:top}
 .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
-.tg .tg-ke5j{font-size:26px;font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif !important;;background-color:#00d2cb;border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-ke5j{font-size:26px;font-family:"Oswald"; background-color:#00d2cb;border-color:inherit;text-align:center;vertical-align:top}
+#logout{
+  float: right;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: red;
+  font-family: "Oswald";
+}
 
+#mylogs{
+  float: right;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: black;
+  font-family: "Oswald"
+}
+#myname{
+  float: left;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 28px;
+  line-height: 25px;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: black;
+  font-family: "Oswald"
+}
 </style>
 <!-- w3-content defines a container for fixed size centered content,
 and is wrapped around the whole page content, except for the footer in this example -->
+<div class="w3-bar w3-black w3-hide-small">
+
+  <div class="header-info">
+    <p id="myname">CREATE YOUR NEW LOG HERE</p>
+    <div class="header-right">
+      <form action="/logout" method="POST">
+      <input type="submit" id="logout" value="LOGOUT" />
+      </form>
+    </div>
+  <div class="header-right">
+    <form action="/login" method="GET">
+      <input type="submit" id="mylogs" value="BACK TO HOME"/>
+    </form>
+  </div>
+
+
+  </div>
+</div>
+
 
   <header id="title_head" class="w3-container w3-center w3-padding-48 w3-white">
-    <h1 class="w3-jumbo"><b>PATIENTS LIKE ME</b></h1>
+    <h1 class="w3-jumbo"><b>SWASTHYA</b></h1>
     <h6>Cure and Inspire...<span class="w3-tag">TOGETHER</span></h6>
   </header><br><br><br>
 <div class="w3-content w3-middle" style="max-width:1600px; padding-left:350px">
