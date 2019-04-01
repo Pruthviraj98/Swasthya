@@ -29,6 +29,12 @@ app.get('/', function(request, response) {
 	response.sendFile(path.join(__dirname + '/Main_Screen.html'));
 });
 
+// app.post('/discussion', function(request, response){
+//     const routes = require('./routes/index.js');
+//     const routes_public = require('./routes/public.index.js');
+//     app.use('/api', routes);
+//     app.use('/', routes_public);
+// });
 
 app.post('/auth', function(request, response) {
 	var username = request.body.username;
