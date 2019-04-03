@@ -5,7 +5,7 @@
       type="image/png"
       href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZBDibVBL5r6nmapCoaOzIe-LO4nCpA2OrlQyeERPcJWbvHFiK">
 </head>
-<title>My LOGS</title>
+<title>Search Results</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -39,10 +39,10 @@
   background-size: cover;
   position: relative;
 }
-.tg {border-collapse:collapse;border-spacing:0;}
+.tg {border-collapse:collapse;border-spacing:0; padding:30px}
 .tg td{font-family:Arial, sans-serif;font-size:14px;padding:20px 17px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
 .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:20px 17px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
-.tg .tg-tlfu{font-weight:bold;font-size:26px;font-family:"Oswald";background-color:white;border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-tlfu{font-weight:bold;font-size:26px;font-family:"Oswald";background-color:white; padding:20px 180px;border-color:inherit;text-align:center;vertical-align:top}
 .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
 .tg .tg-ke5j{font-size:26px;font-family:"Oswald";background-color:white;border-color:inherit;text-align:center;vertical-align:top}
 
@@ -91,7 +91,7 @@ and is wrapped around the whole page content, except for the footer in this exam
 <div class="w3-bar w3-black w3-hide-small">
 
   <div class="header-info">
-    <p id="myname">LOGS OF: {{name}}</p>
+    <p id="myname">Dr.{{docName}} treating {{Pname}}</p>
     <div class="header-right">
       <form action="/logout" method="POST">
       <input type="submit" id="logout" value="LOGOUT" />
@@ -106,53 +106,12 @@ and is wrapped around the whole page content, except for the footer in this exam
 
   </div>
 </div>
-  <header id="title_head" class="w3-container w3-center w3-padding-48 w3-white">
+  <header id="title_head" class="w3-container w3-center w3-padding-20 w3-white">
     <h1 class="w3-jumbo"><b>SWASTHYA</b></h1>
     <h6>Cure and Inspire...<span class="w3-tag">TOGETHER</span></h6>
   </header>
-  <div class="w3-content w3-middle" style="max-width:1600px; padding-left:350px">
+<center>
+<br><br><br> <h1>  COMING SOOOON!!!
+</h1>
 
-    <div class="w3-white w3-margin" style="float:left" >
-      <table class="tg">
-  <tr>
-    <th class="tg-tlfu">Name</th>
-    <th class="tg-tlfu">{{name}}</th>
-  </tr>
-  <tr>
-    <td class="tg-tlfu">My Condition</td>
-    <td class="tg-tlfu">{{diseases}}</td>
-  </tr>
-  <tr>
-    <td class="tg-tlfu">My Symptoms</td>
-    <td class="tg-tlfu">{{symptoms}}</td>
-  </tr>
-  <tr>
-    <td class="tg-tlfu">Date of Cure</td>
-    <td class="tg-tlfu">{{date_cure}}</td>
-  </tr>
-  <tr>
-    <td class="tg-tlfu">Hospitals Visited</td>
-    <td class="tg-tlfu">{{hospitals}}</td>
-  </tr>
-  <tr>
-    <td class="tg-tlfu">My Phone Number</td>
-    <td class="tg-tlfu">{{phno}}</td>
-  </tr>
-  <tr>
-    <td class="tg-ke5j" colspan="2">Steps taken till {{date_log}}</td>
-  </tr>
-  <tr>
-    <td class="tg-tlfu" colspan="2">
-      {{steps}}
-    </td>
-  </tr>
-</table>
-    </div>
-<br><br>
-	 
-
-<!-- END w3-content -->
-</div>
-
-</body>
 </html>

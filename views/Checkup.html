@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html>
 <head>
 <link rel="icon"
       type="image/png"
       href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZBDibVBL5r6nmapCoaOzIe-LO4nCpA2OrlQyeERPcJWbvHFiK">
 </head>
-<title>My LOGS</title>
+<title> SWASTHYA</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -16,6 +17,20 @@
 
 <!-- Navigation bar with social media icons -->
 <style>
+
+#adminContact{
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 5px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: white;
+  font-family: "Oswald";
+}
 #logi{
   padding-top: 70px;
   padding-right: 50px;
@@ -39,13 +54,12 @@
   background-size: cover;
   position: relative;
 }
-.tg {border-collapse:collapse;border-spacing:0;}
+.tg  {border-collapse:collapse;border-spacing:0;}
 .tg td{font-family:Arial, sans-serif;font-size:14px;padding:20px 17px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
 .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:20px 17px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
-.tg .tg-tlfu{font-weight:bold;font-size:26px;font-family:"Oswald";background-color:white;border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-tlfu{font-weight:bold;font-size:26px;font-family:"Oswald";background-color:#BFE8FA;border-color:inherit;text-align:center;vertical-align:top}
 .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
-.tg .tg-ke5j{font-size:26px;font-family:"Oswald";background-color:white;border-color:inherit;text-align:center;vertical-align:top}
-
+.tg .tg-ke5j{font-size:26px;font-family:"Oswald"; background-color:#BFE8FA;border-color:inherit;text-align:center;vertical-align:top}
 #logout{
   float: right;
   color: white;
@@ -86,73 +100,54 @@
   font-family: "Oswald"
 }
 </style>
-<!-- w3-content defines a container for fixed size centered content,
-and is wrapped around the whole page content, except for the footer in this example -->
-<div class="w3-bar w3-black w3-hide-small">
 
-  <div class="header-info">
-    <p id="myname">LOGS OF: {{name}}</p>
-    <div class="header-right">
-      <form action="/logout" method="POST">
-      <input type="submit" id="logout" value="LOGOUT" />
-      </form>
-    </div>
-  <div class="header-right">
-    <form action="/login" method="GET">
-      <input type="submit" id="mylogs" value="BACK TO HOME"/>
-    </form>
-  </div>
-
-
-  </div>
-</div>
-  <header id="title_head" class="w3-container w3-center w3-padding-48 w3-white">
+  <header id="title_head" class="w3-container w3-center w3-padding-20 w3-white">
     <h1 class="w3-jumbo"><b>SWASTHYA</b></h1>
     <h6>Cure and Inspire...<span class="w3-tag">TOGETHER</span></h6>
   </header>
-  <div class="w3-content w3-middle" style="max-width:1600px; padding-left:350px">
+<br><br><br>
 
-    <div class="w3-white w3-margin" style="float:left" >
+<div class="w3-content w3-middle" style="max-width:500px; padding-left:550">
+
+  <form id="heart" action="/checkupEntry" method="POST">
       <table class="tg">
   <tr>
-    <th class="tg-tlfu">Name</th>
-    <th class="tg-tlfu">{{name}}</th>
+    <td class="tg-tlfu">Doc-Username</td>
+    <th class="tg-tlfu"><input type="text" name="Dname" id="id" placeholder="Enter name"/></th>
   </tr>
   <tr>
-    <td class="tg-tlfu">My Condition</td>
-    <td class="tg-tlfu">{{diseases}}</td>
+    <td class="tg-tlfu">Password</td>
+    <th class="tg-tlfu"><input type="password" name="pass" placeholder="Enter the Password"/></th>
   </tr>
   <tr>
-    <td class="tg-tlfu">My Symptoms</td>
-    <td class="tg-tlfu">{{symptoms}}</td>
-  </tr>
-  <tr>
-    <td class="tg-tlfu">Date of Cure</td>
-    <td class="tg-tlfu">{{date_cure}}</td>
-  </tr>
-  <tr>
-    <td class="tg-tlfu">Hospitals Visited</td>
-    <td class="tg-tlfu">{{hospitals}}</td>
-  </tr>
-  <tr>
-    <td class="tg-tlfu">My Phone Number</td>
-    <td class="tg-tlfu">{{phno}}</td>
-  </tr>
-  <tr>
-    <td class="tg-ke5j" colspan="2">Steps taken till {{date_log}}</td>
-  </tr>
-  <tr>
-    <td class="tg-tlfu" colspan="2">
-      {{steps}}
+    <td class="tg-0pky" colspan="2">
+      <center>
+        <input type="submit" value="submit" name="submit" id="submit" align="center"/>
+      </center>
     </td>
   </tr>
-</table>
+          </table>
+        <br><br>
+      </form>
     </div>
-<br><br>
-	 
 
-<!-- END w3-content -->
-</div>
 
-</body>
+    <footer>
+    <div class="w3-bar w3-black w3-hide-small">
+      <div class="header-right" style="float:right; padding-right:550px">
+        <form action="/contact" method="POST">
+        <input type="submit" id="adminContact" name="contactAdmin" value="Contact us" />
+        </form>
+      </div>
+      <div class="header-right" style="float:right; padding-right:10px">
+        <form action="/more" method="POST">
+        <input type="submit" id="adminContact" name="moreAbout" value="More About us" />
+        </form>
+      </div>
+    </div>
+    </footer>
+
+
+  </body>
+
 </html>
