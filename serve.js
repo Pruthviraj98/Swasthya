@@ -104,6 +104,21 @@ app.post('/donate', function(request, response){
   response.render('donatePage.html');
 });
 
+app.post('/checkupEntry', function(request, response){
+  response.render('HealthOptions.html', {
+    docName :request.body.Dname,
+    Pname: request.session.username
+  });
+});
+
+app.post('/docEntry', function(request, response){
+  response.render('Checkup.html');
+});
+
+app.post('/HeartbeatCheckup', function(request, response){
+  response.render('HeartbeatCheckup.html');
+});
+
 app.post('/donateItems', function(request, response){
   var itemType=request.body.itemType;
   var itemName=request.body.itemName;
